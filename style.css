@@ -1,0 +1,267 @@
+*,
+::before,
+::after{
+    box-sizing: 
+    border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 
+    'Monserrat',
+    sans-serif;
+    background: linear-gradient(#20002c,#cbb4d4);
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0%{
+        background-position: 0 50%;
+
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+
+h1,
+h2,
+h3,
+h4{
+    margin: 1px;
+   
+}
+
+h1{
+    color: rgb(197, 61, 61);
+}
+.header{
+    width: 100%;
+    padding: 25px 0;
+
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+    color: #cbb4d4;
+}
+.header_logo{
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.container{
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 -5px; 
+}
+
+.hero_container{
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fit,minmax(290px, 1fr));
+    grid-gap: 20px;
+}
+
+.hero_about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero_title{
+    margin-bottom: 5px;
+
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.hero_subtitle{
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.hero_links{
+    display: flex;
+}
+
+.hero_link{
+    margin-right: 10px;
+
+    font-size: 35px;
+    color: black;
+    transition: color 0.3s;
+}
+
+.hero_link:hover{
+    color:#cbb4d4;
+}
+
+.dws{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.butt{
+    border: 6px solid #cbb4d4;
+    font-size: 35px;
+    color: #cbb4d4;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 401px;
+    height: 102px;
+    display: block;
+    text-align: center;
+    line-height: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    transition:  .5s;
+    overflow: hidden;
+}
+
+.butt::before,
+.butt::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background:#cbb4d4;
+    top: 0;
+    left: -100%;
+    opacity:  .5;
+    transition:  .3s;
+    z-index: -1;
+}
+.butt::after{
+    opacity: 1;
+    transition-delay:  .2s;
+}
+
+.butt:hover{
+    color:#fff
+}
+
+.butt:hover::before,
+.butt:hover::after {
+    left: 0;
+}
+
+.hero_box{
+    max-width: 500px;
+    justify-self: center;
+    overflow: hidden;
+
+    background-image: linear-gradient
+    (to top, #fddb92 0%, #d1fdff 100%);
+
+    border: 10px solid #fff;
+    box-shadow: 2px 5px 10px
+    rgba(0, 0, 0, 0.5);
+
+    animation: ava-animate 5s infinite alternate;
+    
+}
+
+
+.hero_box-img{
+    animation: ava-bg 3s infinite alternate;
+}
+
+@media screen and (max-widht:978px){
+    .hero{
+        padding-top: 30px;
+    }
+
+    .hero_container{
+        grid-row-gap: 20px;
+    }
+
+    .hero_title{
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .hero_subtitle{
+        font-size: 22px;
+        font-weight: 400;
+
+    }
+
+    .hero_description{
+        font-size: 20px;
+        
+
+    }
+
+    .hero_about{
+        text-align: center;
+
+
+    }
+
+    .hero_links{
+        justify-content: center;
+    }
+
+    .hero_box{
+        max-width: 350px;
+    }
+}
+
+    
+
+
+
+
+@keyframes ava-animate{
+    0%{
+        border-radius: 67% 33% 76% 24% / 78% 39% 61% 22%   ;
+    }
+    40%{
+        border-radius: 28% 72% 52% 48% / 78% 39% 61% 22%   ;
+    }
+    60%{
+        border-radius: 28% 72% 52% 48% / 39% 77% 23% 61%   ;
+    }
+   100%{
+        border-radius: 88% 12% 76% 24% / 50% 22% 78% 50%     ;
+    }
+}
+
+@keyframes ava-bg{
+    from{
+        backdrop-filter: hue-rotate(0);
+    }
+
+    to{
+        backdrop-filter: hue-rotate(90deg);
+    }
+}
+
+
+
